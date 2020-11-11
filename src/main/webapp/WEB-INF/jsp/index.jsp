@@ -16,7 +16,7 @@
 </head>
 <div class="cssmenu">
  <ul>
-  <li><a  href ="#">个人信息</a></li>
+  <li><a  href ="per_info.jsp">个人信息</a></li>
   <li><a href ="user_list.jsp">员工表</a></li>
 
    <li><a  href ="#">公告</a></li>
