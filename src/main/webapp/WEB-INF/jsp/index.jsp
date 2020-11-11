@@ -16,8 +16,9 @@
 </head>
 <div class="cssmenu">
  <ul>
+  <li><a  href ="#">个人信息</a></li>
   <li><a href ="user_list.jsp">员工表</a></li>
-   <li><a  href ="#">企业介绍</a></li>
+
    <li><a  href ="#">公告</a></li>
    <li><a href ="#">新闻</a></li>
    <li><a  href ="#">产品介绍</a></li>
