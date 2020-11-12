@@ -20,6 +20,7 @@
     <!-- mapping文件路径配置 -->
     <mappers>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/TableMapper.xml"/>
     </mappers>
 
 </configuration>

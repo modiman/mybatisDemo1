@@ -10,9 +10,7 @@
     <select id="findAll" resultType="com.hello.pojo.User">
         select * from users
     </select>
-    <select id="ShowTables"  resultType="java.lang.String">
-        select name from tables
-    </select>
+
     <insert id="InsertInto" parameterType="com.hello.pojo.User" >
         insert into users(uid,uname,uage) values (null,#{uname},#{uage})
     </insert>

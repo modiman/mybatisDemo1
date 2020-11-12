@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hello.pojo.Table">
+
+<!--    <select id="findById" parameterType="int" resultType="com.hello.pojo.User">-->
+<!--        select * from users where uid = #{id}-->
+<!--    </select>-->
+<!--    <select id="findAll" resultType="com.hello.pojo.User">-->
+<!--        select * from users-->
+<!--    </select>-->
+    <select id="ShowTables"   resultMap="java.lang.String">
+        select name from tables where id = 1
+    </select>
+    <insert id="Insert"   >
+       insert into tables values("hhh",5,"dadad",6)
+    </insert>
+<!--    <insert id="InsertInto" parameterType="com.hello.pojo.User" >-->
+<!--        insert into users(uid,uname,uage) values (null,#{uname},#{uage})-->
+<!--    </insert>-->
+<!--    <delete id="DeleteById" parameterType="int">-->
+<!--        delete from users where uid = #{id}-->
+<!--    </delete>-->
+<!--    <update id="updateById" parameterType="int">-->
+<!--        update users set uname="老摩迪" where uid = #{id}-->
+<!--    </update>-->
+<resultMap id="TableResult" type="com.hello.pojo.Table">
+    <id column="id" property="id" javaType="INTEGER"/>
+
+    <result column="name" property="name" jdbcType="VARCHAR"></result>
+    <result column="id" property="id" jdbcType="INTEGER"></result>
+    <result column="describ" property="describ" jdbcType="VARCHAR"></result>
+    <result column="attrib_num" property="attrib_num" jdbcType="INTEGER"></result>
+</resultMap>
+</mapper>
+        <!--            mapper为映射的根节点，namespace指定Dao接口的完整类名-->
+        <!--            mybatis会依据这个接口动态创建一个实现类去实现这个接口，-->
+        <!--            而这个实现类是一个Mapper对象-->
+        <!--  id ="接口中的方法名"-->
+        <!--　　parameterType="传入的参数类型"-->
+        <!--　　resultType = "返回实体类对象，使用包.类名"-->

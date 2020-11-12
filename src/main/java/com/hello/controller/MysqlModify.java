@@ -1,6 +1,7 @@
 package com.hello.controller;
 
-import com.hello.pojo.User;
+import com.hello.pojo.Table;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,7 +11,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 public class MysqlModify {
 @Test
     public void ShowTables()
@@ -29,17 +32,27 @@ public class MysqlModify {
         SqlSessionFactory sqlMapper=new SqlSessionFactoryBuilder().build(reader);
         //创建session实例
         SqlSession session=sqlMapper.openSession();
-        ArrayList<String> list = new ArrayList<String>();
+        List<HashMap> list = new ArrayList<HashMap>();
         //传入参数查询，返回结果
-       // String str = new String();
-        list=session.selectList("ShowTables");
+//        session.insert("Insert");
+//        session.commit();
+        String st = "";
+        st = session.selectOne("ShowTables");
+//        list =session.selectList("ShowTables");
         //输出结果
-        //System.out.println(user.getUname());
+//        System.out.println(list.size());
+        System.out.println(st);
         //关闭session
-        for(String str:list)
-        {
-            System.out.println(str);
-        }
+//        for(HashMap a:list)
+//            for(Object key:a.keySet())
+//            {
+//                System.out.println(a.get(key));
+//            System.out.print(a.get("name"));
+//            System.out.print("  ");
+//            System.out.print(a.getName());
+//            System.out.print("  ");
+//            System.out.println(a.getDescrib());
+//        }
         session.close();
         //return  list;
 

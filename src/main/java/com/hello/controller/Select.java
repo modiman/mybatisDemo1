@@ -47,6 +47,7 @@ public class Select {
     }
     @Test
     public List<User> SelectAllTest()
+//    public void SelectAllTest()
     {
         String resources = "mybatis-config.xml";
         //创建流
