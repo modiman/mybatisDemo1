@@ -17,6 +17,7 @@
 <html>
 <title>hellojsp</title>
 <body bgcolor="aqua">
+<button type="submit"><a href="index.jsp">返回首页</a></button>
 <h1>员工表信息</h1>
 <%!
 

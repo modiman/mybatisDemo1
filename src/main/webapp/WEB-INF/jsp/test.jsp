@@ -1,297 +1,80 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: modige
-  Date: 2020/11/11
-  Time: 20:38
-  To change this template use File | Settings | File Templates.
---%><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<head>
-    <title>选项卡式导航</title>
-    <style type="text/css">
-        <!--
-        * {
-            margin: 0; padding:0
-        }
-        body {
-            margin-top: 10px;
-            margin-right: 10%;
-            margin-bottom: 10px;
-            margin-left: 10%;
-            text-align: center;
-            height: auto;
-            width: auto;
-            background-color: #666666;
-            font-size: 12px;
-            color: #000000;
-        }
-        #container {
-            text-align: left;
-            width: 760px;
-            height: 400px;
-            padding: 20px;
-        }
-        #container #title {
-            height: 28px;
-        }
-        #container #title li {
-            float: left;
-            list-style-type: none;
-            height: 28px;
-            line-height: 28px;
-            text-align: center;
-            margin-right: 1px;
-        }
-        #container #title ul {
-            height: 28px;
-        }
-        #container #title a {
-            text-decoration: none;
-            color: #000000;
-            display: block;
-            width: auto;
-        }
-        #container #title a span{
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title #tag1 a:hover {
-            text-decoration: none;
-            display: block;
-            width: auto;
-        }
-        #container #title #tag1 a:hover span{
-            display: block;
-            background-color: dodgerblue;
-            padding: 0 15px 0 15px;
-        }
-        #container #title #tag2 a:hover {
-            text-decoration: none;
-            display: block;
-            width: auto;
-        }
-        #container #title #tag2 a:hover span{
-            background-color: dodgerblue;
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title #tag3 a:hover {
-            text-decoration: none;
-            display: block;
-            width: auto;
-        }
-        #container #title #tag3 a:hover span{
-            background-color: dodgerblue;
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title #tag4 a:hover {
-            text-decoration: none;
-            display: block;
-            width: auto;
-        }
-        #container #title #tag4 a:hover span{
-            background-color: dodgerblue;
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title #tag5 a:hover {
-            text-decoration: none;
-            display: block;
-            width: auto;
-        }
-        #container #title #tag5 a:hover span{
-            background-color: dodgerblue;
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title .selectli1 {
-            text-decoration: none;
-            color: #ffffff;
-            display: block;
-            width: auto;
-        }
-        #container #title a .selectspan1 {
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title .selectli2 {
-            text-decoration: none;
-            color: #ffffff;
-            display: block;
-            width: auto;
-        }
-        #container #title a .selectspan2 {
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title .selectli3 {
-            text-decoration: none;
-            color: #ffffff;
-            display: block;
-            width: auto;
-        }
-        #container #title a .selectspan3 {
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title .selectli4 {
-            text-decoration: none;
-            color: #ffffff;
-            display: block;
-            width: auto;
-        }
-        #container #title a .selectspan4 {
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #title .selectli5 {
-            text-decoration: none;
-            color: #ffffff;
-            display: block;
-            width: auto;
-        }
-        #container #title a .selectspan5 {
-            display: block;
-            padding: 0 15px 0 15px;
-        }
-        #container #content ul {margin: 10px;}
-        #container #content li {margin: 5px; }
-        #container #content li img {margin: 5px;display:block;}
-        #container #content {
-            height: 300px;
-            padding: 10px;
-        }
-        .content1 {
-            border-top-width: 3px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #3A81C8;
-            border-right-color: #3A81C8;
-            border-bottom-color: #3A81C8;
-            border-left-color: #3A81C8;
-            background-color: #DFEBF7;
-        }
-        .content2 {
-            border-top-width: 3px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #ff950b;
-            border-right-color: #ff950b;
-            border-bottom-color: #ff950b;
-            border-left-color: #ff950b;
-            background-color: #FFECD2;
-        }
-        .content3 {
-            height: 300px;
-            padding: 10px;
-            border-top-width: 3px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #FE74B8;
-            border-right-color: #FE74B8;
-            border-bottom-color: #FE74B8;
-            border-left-color: #FE74B8;
-            background-color: #FFECF5;
-        }
-        .content4 {
-            height: 300px;
-            padding: 10px;
-            border-top-width: 3px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #00988B;
-            border-right-color: #00988B;
-            border-bottom-color: #00988B;
-            border-left-color: #00988B;
-            background-color: #E8FFFD;
-        }
-        .content5 {
-            height: 300px;
-            padding: 10px;
-            border-top-width: 3px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #A8BC1F;
-            border-right-color: #A8BC1F;
-            border-bottom-color: #A8BC1F;
-            border-left-color: #A8BC1F;
-            background-color: #F7FAE2;
-        }
-        .hidecontent {display:none;}
-        -->
-    </style>
-    <script language="javascript">
-        function switchTag(tag,content)
-        {
-//    alert(tag);
-//    alert(content);
-            for(i=1; i < 6; i++)
-            {
-                if ("tag"+i==tag)
-                {
-                    document.getElementById(tag).getElementsByTagName("a")[0].className="selectli"+i;
-                    document.getElementById(tag).getElementsByTagName("a")[0].getElementsByTagName("span")
-                        [0].className="selectspan"+i;
-                }else{
-                    document.getElementById("tag"+i).getElementsByTagName("a")[0].className="";
-                    document.getElementById("tag"+i).getElementsByTagName("a")[0].getElementsByTagName("span")
-                        [0].className="";
-                }
-                if ("content"+i==content)
-                {
-                    document.getElementById(content).className="";
-                }else{
-                    document.getElementById("content"+i).className="hidecontent";
-                }
-                document.getElementById("content").className=content;
-            }
-        }
-    </script>
-</head>
-<body>
-<div id="container">
-    <div id="title">
-        <ul>
-            <li id="tag1"><a href="#" onclick="switchTag('tag1','content1');this.blur();" class="selectli1"><span
-                    class="selectspan1">首页</span></a></li>
-            <li id="tag2"><a href="#" onclick="switchTag('tag2','content2');this.blur();"><span>下载中心</span></a></li>
-            <li id="tag3"><a href="#" onclick="switchTag('tag3','content3');this.blur();"><span>产品介绍</span></a></li>
-            <li id="tag4"><a href="#" onclick="switchTag('tag4','content4');this.blur();"><span>会员注册与登录</span></a></li>
-            <li id="tag5"><a href="#" onclick="switchTag('tag5','content5');this.blur();"><span>联系我们</span></a></li>
-        </ul>
-    </div>
-    <div id="content" class="content1">
-        <div id="content1" >1、根据字数自适应项目长度</div>
-        <div id="content2" class="hidecontent">2、不同的项目使用不同的颜色来区分</div>
-        <div id="content3" class="hidecontent">3、这回需要使用到js了，呵呵</div>
-        <div id="content4" class="hidecontent">4、背景图片只需要两个图片文件就足够，减少服务器负担</div>
-        <div id="content5" class="hidecontent">5、这是使用到的两个图片</div>
-    </div>
-</div>
-</body>
-</html>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%--<%@page import="com.hello.controller.*,com.hello.pojo.*,java.util.List" %>--%>
+<%--<%@ page import="java.util.ArrayList" %>--%>
+<%--<html>--%>
+<%--<%!--%>
+
+<%--    MysqlModify mysqlm = new MysqlModify();--%>
+<%--    List<Table> list = mysqlm.ShowTables();--%>
+<%--   String str = "folding";--%>
+<%--   String[] no = {"a0","a1","a2","a4"};--%>
+
+
+
+<%--%>--%>
+<%--<head>--%>
+<%--    <title>Mysql可视化</title>--%>
+
+
+<%--<script>--%>
+<%--    function show(c_Str)--%>
+<%--    {if(document.all(c_Str).style.display=='none')--%>
+<%--    {document.all(c_Str).style.display='block';}--%>
+<%--    else{document.all(c_Str).style.display='none';}}--%>
+<%--    function high(){--%>
+<%--        if (event.srcElement.className=="k"){--%>
+<%--            event.srcElement.style.background="336699"--%>
+<%--            event.srcElement.style.color="white"--%>
+<%--        }--%>
+<%--    }--%>
+<%--    function low(){--%>
+<%--        if (event.srcElement.className=="k"){--%>
+<%--            event.srcElement.style.background="99CCFF"--%>
+<%--            event.srcElement.style.color=""--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
+<%--<head>--%>
+<%--    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">--%>
+<%--    <title>导航栏</title>--%>
+<%--    <style>--%>
+<%--        td { cursor: hand; font-family: Tahoma; background-color: #336699; color: #99CCFF; font-size: 10pt }--%>
+<%--        li{ color: #FF0000; font-family: Tahoma; background-color: #99CCFF; font-size: 9pt}--%>
+<%--        .up{ background-color: #3A6EA5; border-left: 1 solid #A6C1DF;border-right: 1 solid #002200; border-top: 1 solid #A6C1DF; border-bottom: 1 solid #002200 }--%>
+<%--    </style>--%>
+<%--</head>--%>
+
+
+<%--<body topmargin="0" leftmargin="5">--%>
+<%--<button type="submit"><a href="index.jsp">返回首页</a></button>--%>
+
+<%--<h1>数据库名：mybatis</h1>--%>
+<%--<h2>当前数据库中所有的表</h2>--%>
+<%--<div align="left">--%>
+<%--    <table border="0" width="48" cellspacing="0" cellpadding="0">--%>
+<%--&lt;%&ndash;        &lt;%&ndash;%>--%>
+<%--&lt;%&ndash;            for (Table table:list){  //循环输出列表内容%>&ndash;%&gt;--%>
+<%--    <% for(int i = 0;i<5;i++) {%>--%>
+<%--        <tr>--%>
+<%--&lt;%&ndash;            <%=table.getName()%>&ndash;%&gt;--%>
+<%--            <td><div class=up onclick=show(<%=no[i]%>)><%=str%></div><div onmouseover=high() onmouseout=low() id=<%=no[i]%> style="display:none">--%>
+<%--                <li class=k>01</li>--%>
+<%--                <li class=k>02</li>--%>
+<%--                <li class=k>03</li>--%>
+<%--                <li class=k>04</li>--%>
+<%--                <li class=k>04</li>--%>
+<%--                <li class=k>05</li>--%>
+<%--                <li class=k>06</li>--%>
+<%--                <li class=k>07</li>--%>
+<%--                <li class=k>08</li>--%>
+<%--                <li class=k>09</li>--%>
+<%--                <li class=k>10</li>--%>
+<%--            </div></td>--%>
+<%--    <% }%>--%>
+
+<%--        </tr>--%>
+
+<%--    </table>--%>
+<%--</div>--%>
+<%--</body>--%>
+<%--</html>--%>

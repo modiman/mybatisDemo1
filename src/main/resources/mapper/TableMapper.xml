@@ -10,8 +10,8 @@
 <!--    <select id="findAll" resultType="com.hello.pojo.User">-->
 <!--        select * from users-->
 <!--    </select>-->
-    <select id="ShowTables"   resultMap="java.lang.String">
-        select name from tables where id = 1
+    <select id="ShowTables"   resultType="com.hello.pojo.Table">
+        select * from tables
     </select>
     <insert id="Insert"   >
        insert into tables values("hhh",5,"dadad",6)

@@ -8,19 +8,45 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="com.hello.controller.*,com.hello.pojo.*" %>
+<%@page import="com.hello.controller.*,com.hello.pojo.*,java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%!
+
+    MysqlModify mysqlm = new MysqlModify();
+    List<Table> list = mysqlm.ShowTables();
+
+%>
 <html>
 <head>
     <title>Mysql可视化</title>
     <link rel="stylesheet" href="/css/daohang.css">
 
 </head>
-
+<button type="submit"><a href="index.jsp">返回首页</a></button>
 <body>
 <h1>数据库名：mybatis</h1>
 <h2>当前数据库中所有的表</h2>
+<table>
+    <tr>
+
+        <td>id</td>
+        <td>表名</td>
+        <td>属性个数</td>
+        <td>内容</td>
+    </tr>
+    <% for(Table table:list){
+
+    %>
+    <tr>
+        <td> <%=table.getId()%></td>
+        <td> <%=table.getName()%></td>
+        <td> <%=table.getAttrib_num()%></td>
+        <td> <%=table.getDescrib()%></td>
+    </tr>
+    <%}%>
+</table>
 <div class="cssmenu">
-    <% for ()
+<%--    <% for ()--%>
     <ul>
         <li><a  href ="per_info.jsp">数据库操作</a></li>
 

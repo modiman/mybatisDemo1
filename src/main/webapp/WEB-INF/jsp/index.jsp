@@ -19,8 +19,8 @@
   <li><a  href ="per_info.jsp">个人信息</a></li>
   <li><a href ="user_list.jsp">员工表</a></li>
 
-   <li><a  href ="#">公告</a></li>
-   <li><a href ="#">新闻</a></li>
+   <li><a  href ="MysqlModify.jsp">数据库</a></li>
+   <li><a href =test.jsp>测试</a></li>
    <li><a  href ="#">产品介绍</a></li>
    <li><a  href ="#" class ="last">联系我们</a></li>
  </ul>
