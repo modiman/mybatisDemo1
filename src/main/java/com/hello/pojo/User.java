@@ -1,31 +1,31 @@
 package com.hello.pojo;
 
 public class User {
-    private int uid;
-    private String uname;
-    private int uage;
+    private int user_id;
+    private String user_name;
+    private int emails;
 
-    public int getUid() {
-        return uid;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public String getUname() {
-        return uname;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public int getUage() {
-        return uage;
+    public int getEmails() {
+        return emails;
     }
 
-    public void setUage(int uage) {
-        this.uage = uage;
+    public void setEmails(int emails) {
+        this.emails = emails;
     }
 }

@@ -34,8 +34,8 @@ public class InsertInto {
 
         //传入参数查询，返回结果
         User user_hm = new User();
-        user_hm.setUage(25);
-        user_hm.setUname("zozo");
+        user_hm.setUser_id(0);
+        user_hm.setUser_name("zozo");
 
         session.insert("InsertInto",user_hm);
         session.commit();
@@ -47,21 +47,21 @@ public class InsertInto {
         System.out.println("修改之前的users表为");
         for(User a:listBefore)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
 
         System.out.println("修改之后的users表为");
         for(User a:listAfter)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
         if (listBefore.size()<listAfter.size())
             System.out.println("删除成功");

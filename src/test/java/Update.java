@@ -48,21 +48,21 @@ public class Update {
         System.out.println("修改之前的users表为");
         for(User a:listBefore)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
 
         System.out.println("修改之前的users表为");
         for(User a:listAfter)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
 
         //输出结果

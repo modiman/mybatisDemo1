@@ -36,9 +36,9 @@
 
         for(User user:list){//循环3次 每次输出一行%>
     <tr>
-        <td><%=user.getUid()%></td>
-        <td><%=user.getUname()%></td>
-        <td><%=user.getUage()%></td>
+        <td><%=user.getUser_id()%></td>
+        <td><%=user.getUser_name()%></td>
+        <td><%=user.getEmails()%></td>
     </tr>
 
     <%--  </br>--%>

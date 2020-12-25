@@ -6,7 +6,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 import java.io.IOException;
 import java.io.Reader;
@@ -21,7 +22,7 @@ public class Select {
     public static void main(String[] args) {
 
     }
-    @Test
+@Test
     public void userFindByIdTest(){
         //定义读取文件名
         String resources = "mybatis-config.xml";
@@ -40,14 +41,14 @@ public class Select {
         //传入参数查询，返回结果
         User user=session.selectOne("findById",1);
         //输出结果
-        System.out.println(user.getUname());
+        System.out.println(user.getUser_name());
         //关闭session
         session.close();
 
     }
-    @Test
+//@Test
     public List<User> SelectAllTest()
-//    public void SelectAllTest()
+    //public void SelectAllTest()
     {
         String resources = "mybatis-config.xml";
         //创建流
@@ -69,11 +70,11 @@ public class Select {
         //输出结果
         for(User a:list)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
         //关闭session
         session.close();

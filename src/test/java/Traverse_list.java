@@ -12,32 +12,32 @@ public class Traverse_list {
         for(int i=1;i<5;i++)
         {
             User user = new User();
-            user.setUid(i);
-            user.setUname("modige"+i);
-            user.setUage(i*i);
+            user.setUser_id(i);
+            user.setUser_name("modige"+i);
+            user.setEmails(i*i);
             list.add(user);
         }
         //高级for循环
         for(User a:list)
         {
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
         //低级for循环
         for(int i=0;i<list.size();i++)
         {
-            User user = (User)list.get(i);
-            System.out.println(user.getUname());
+            User user = list.get(i);
+            System.out.println(user.getUser_name());
         }
         //迭代器
         Iterator<User> item = list.iterator();
         while(item.hasNext())
         {
-            User user = (User) item.next();
-            System.out.println(user.getUname());
+            User user = item.next();
+            System.out.println(user.getUser_name());
         }
 
     }

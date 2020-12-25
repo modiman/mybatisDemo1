@@ -38,7 +38,7 @@ public class Select {
         //传入参数查询，返回结果
         User user=session.selectOne("findById",1);
         //输出结果
-        System.out.println(user.getUname());
+        System.out.println(user.getUser_name());
         //关闭session
         session.close();
 
@@ -70,11 +70,11 @@ public class Select {
         for(User a:list)
         {
             user_list.add(a);
-            System.out.print(a.getUid());
+            System.out.print(a.getUser_id());
             System.out.print("  ");
-            System.out.print(a.getUname());
+            System.out.print(a.getUser_name());
             System.out.print("  ");
-            System.out.println(a.getUage());
+            System.out.println(a.getEmails());
         }
         userlist.setList(user_list);
         //关闭session

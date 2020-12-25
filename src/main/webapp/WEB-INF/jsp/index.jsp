@@ -21,7 +21,7 @@
 
    <li><a  href ="MysqlModify.jsp">数据库</a></li>
    <li><a href =test.jsp>测试</a></li>
-   <li><a  href ="#">产品介绍</a></li>
+   <li><a  href ="Word_list.jsp">单词表</a></li>
    <li><a  href ="#" class ="last">联系我们</a></li>
  </ul>
 </div>
